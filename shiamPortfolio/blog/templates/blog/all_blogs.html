@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h2 class="text-center">Blogs</h2>
+
+    <div class="container">
+      {% for blog in blogs %}
+      <div class="row border border-dark p-4">
+        <a href="{% url 'blog:detail' blog.id %}">
+          <h4>{{blog.title}}</h4>
+        </a>
+        <p>{{blog.description}}</p>
+        Created at
+        <p>{{blog.dateCreated}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

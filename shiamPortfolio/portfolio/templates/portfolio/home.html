@@ -1,0 +1,18 @@
+<h2>Shiam Portfolio</h2>
+{% load static %}
+<img src="{% static 'portfolio/profile.jpg' %}" alt="" />
+
+<a href="{% static 'portfolio/cv.pdf' %}">Resume</a>
+{% for pro in projects %}
+<br />
+{{pro.title}}
+
+<br />
+{{ pro.description }}
+<br />
+
+<img src="{{pro.image.url}}" alt="" height="30" width="30" />
+{% if pro.url %}
+
+<a href="{{pro.url}}">Link</a>
+{% endif %} {% endfor %}
